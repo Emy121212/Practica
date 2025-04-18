@@ -7,6 +7,40 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const buttons = document.querySelectorAll("a");
+          buttons.forEach(button => {
+            button.addEventListener("click", function (e) {
+
+              e.preventDefault();
+              const link = this.href;
+              document.body.classList.add("fade-out");
+              setTimeout(() => {
+                window.location.href = link;
+              }, 600);
+            });
+          });
+        });
+      </script>
+      
+    <img id="movingCar" src="https://brandlogo.org/wp-content/uploads/2024/04/McLaren-Logo.png.webp" alt="Car" class="car-animation hidden">
+    
+    <script>
+        function runCar() {
+          const car = document.getElementById('movingCar');
+          car.classList.remove('run-car');
+          void car.offsetWidth; 
+          car.classList.add('run-car');
+        }
+      
+        document.addEventListener('DOMContentLoaded', () => {
+          setInterval(runCar, 7000); 
+          runCar(); 
+        });
+      </script>
+      
+    
     <div class="background-img"></div>
     <div class="container">
         <header>

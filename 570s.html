@@ -7,6 +7,22 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const buttons = document.querySelectorAll("a");
+          buttons.forEach(button => {
+            button.addEventListener("click", function (e) {
+
+              e.preventDefault();
+              const link = this.href;
+              document.body.classList.add("fade-out");
+              setTimeout(() => {
+                window.location.href = link;
+              }, 600);
+            });
+          });
+        });
+      </script>
     <div class="background-570s"></div>
     <div class="container">
         <header>
